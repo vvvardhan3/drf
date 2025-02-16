@@ -13,4 +13,5 @@ Types of views are
     - needed less code than Mixins based views
     - no need to modify the urls
 5. Viewsets.viewset
-    
+    - needs to write more code
+    - need to modify the urls
