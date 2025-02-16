@@ -16,6 +16,5 @@ Types of views are
     - needs to write more code
     - need to modify the urls
 6. Viewsets.ModelViewset
-    -need only two lines of code for objects and also for object with pk
+    - need only two lines of code for objects and also for object with pk
     - same as Viewsets.viewset
-    
