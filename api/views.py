@@ -8,6 +8,7 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from employees.models import Employee
 from django.http import Http404
+from rest_framework import mixins, generics
 
 
 # Funtional based view for student
@@ -86,3 +87,28 @@ def studentDetailView(request,pk):
 #         employee.delete()
 #         return Response(status=status.HTTP_204_NO_CONTENT)
 
+# mixins
+
+class employees(mixins.ListModelMixin, mixins.CreateModelMixin,generics.GenericAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+
+    def get(self,request):
+        return self.list(request)
+    
+    def post(self,request):
+        return self.create(request)
+    
+
+class employeesDetails(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.DestroyModelMixin, generics.GenericAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+
+    def get(self,request,pk):
+        return self.retrieve(request,pk)
+    
+    def put(self,request,pk):
+        return self.update(request,pk)
+    
+    def delete(self,request,pk):
+        return self.destroy(request,pk)
