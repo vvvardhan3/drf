@@ -9,6 +9,8 @@ from rest_framework.views import APIView
 from employees.models import Employee
 from django.http import Http404
 from rest_framework import mixins, generics, viewsets
+from blogs.models import Blog, Comment
+from blogs.serializers import Blogserializer, Commentserializer
 
 
 # Funtional based view for student
@@ -184,3 +186,14 @@ class employeeViewset(viewsets.ViewSet):
 class employeeViewset(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+
+
+
+class blogView(generics.ListCreateAPIView):
+    queryset = Blog.objects.all()
+    serializer_class = Blogserializer
+
+
+class commentView(generics.ListCreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = Commentserializer
