@@ -1,4 +1,4 @@
-Types of views are 
+A. Types of views are 
 
 1. Funtional based Views 
     - need to write more lines of code to make these views
@@ -18,3 +18,10 @@ Types of views are
 6. Viewsets.ModelViewset
     - need only two lines of code for objects and also for object with pk
     - same as Viewsets.viewset
+
+
+
+B. Nested Serializers
+
+C. Global Pagination
+
