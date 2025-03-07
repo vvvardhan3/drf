@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'students',
     'api',
     'employees',
-    'blogs'
+    'blogs',
+    'fileupload',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,7 @@
 from django.urls import path, include
 from . import views
+from fileupload.views import FileUploadView
+
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
@@ -15,4 +17,5 @@ urlpatterns = [
     path('comments/',views.commentView.as_view()),
     path('blogs/<int:pk>/',views.BlogDetailView.as_view()),
     path('comments/<int:pk>/',views.CommentDetailView.as_view()),
+    
 ]

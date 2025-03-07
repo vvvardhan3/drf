@@ -24,4 +24,6 @@ urlpatterns = [
 
     # API Endpoint
     path('api/v1/', include('api.urls')),
+
+    path('fileupload/', include('fileupload.urls')),
 ]
